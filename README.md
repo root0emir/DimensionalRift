@@ -1,2 +1,2 @@
 # DimensionalRift
--Bağımlılıkları yüklemeyi unutmayın
+-Bağımlılıkları yüklemeyi unutmayın ( stem , scapy )
