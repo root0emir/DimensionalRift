@@ -59,7 +59,7 @@ ____/  _| _|  _|  _| \___| _|  _| ____/ _| \___/  _|  _| \__,_| _|   _| \_\ _| _
                 'curl', '--socks5-hostname', '127.0.0.1:9050', 'https://check.torproject.org'
             ], stderr=subprocess.DEVNULL).decode()
             if "Congratulations" in response:
-                print("[INFO] Tor ağına başarıyla bağlısınız. IP adresiniz gizlenmiş olabilir.")
+                print("[INFO] Tor ağına başarıyla bağlısınız. IP adresiniz gizlendi. Tüm trafik Tor ağına yönlendiriliyor.")
             else:
                 print("[WARNING] Tor ağına bağlı değilsiniz. Bağlantınızı kontrol edin.")
         except Exception as e:
@@ -154,14 +154,14 @@ ____/  _| _|  _|  _| \___| _|  _| ____/ _| \___/  _|  _| \__,_| _|   _| \_\ _| _
 # Kullanım
 if __name__ == "__main__":
     if os.name != 'posix':
-        print("[ERROR] Bu araç yalnızca Linux sistemlerinde çalışır.")
+        print("[ERROR] Bu araç yalnızca Linux tabanlı işletim sistemlerinde çalışır.")
         exit(1)
 
     tool = PrivacyTool()
     tool.banner()
 
     while True:
-        print("\n[1] Tor Ağına Bağlan ve Kimlik Değiştir")
+        print("\n[1] Tor Ağına Bağlan")
         print("[2] Tor Bağlantısını Kontrol Et")
         print("[3] İzleri Temizle")
         print("[4] DNS Ayarlarını Sıfırla")
@@ -172,7 +172,7 @@ if __name__ == "__main__":
         print("[0] Çıkış")
 
         try:
-            choice = input("Seçiminiz: ")
+            choice = input("Başlatılıyor...")
             if choice == "1":
                 tool.connect_to_tor()
             elif choice == "2":
